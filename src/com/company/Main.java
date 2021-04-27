@@ -21,10 +21,10 @@ public class Main {
 //        List<String> personStr = personList.stream().filter(T -> T.getFirstName() != (null) && T.getLastName() != null &&
 //                T.getAddress() != null).sorted().map(T -> T.toString()).collect(Collectors.toUnmodifiableList());
 //        personStr.stream().forEach(System.out::println);
+
         personList.stream()
                 .filter(T -> T.getFirstName() != null && T.getLastName() != null && T.getAddress() != null)
                 .sorted().map(Person::toString).collect(Collectors.toUnmodifiableList())
                 .forEach(System.out::println);
-
     }
 }
