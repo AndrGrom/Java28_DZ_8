@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class Address{
+public class Address {
     private String city;
     private String street;
     private int number;
@@ -39,7 +39,8 @@ public class Address{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Address address = (Address) o;
-        return number == address.number && Objects.equals(city, address.city) && Objects.equals(street, address.street);
+        return number == address.number && street.equals(address.street) && city.equals(address.city);
+        // return number == address.number && Objects.equals(city, address.city) && Objects.equals(street, address.street);
     }
 
     @Override

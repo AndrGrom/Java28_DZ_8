@@ -18,8 +18,13 @@ public class Main {
         Person p6 = new Person("Джо", "Байден", null);
 
         List<Person> personList = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6));
-        List<String> personStr = personList.stream().filter(T -> T.getFirstName() != (null) && T.getLastName() != null &&
-                T.getAddress() != null).sorted().map(T -> T.toString()).collect(Collectors.toUnmodifiableList());
-        personStr.stream().forEach(System.out::println);
+//        List<String> personStr = personList.stream().filter(T -> T.getFirstName() != (null) && T.getLastName() != null &&
+//                T.getAddress() != null).sorted().map(T -> T.toString()).collect(Collectors.toUnmodifiableList());
+//        personStr.stream().forEach(System.out::println);
+        personList.stream()
+                .filter(T -> T.getFirstName() != null && T.getLastName() != null && T.getAddress() != null)
+                .sorted().map(Person::toString).collect(Collectors.toUnmodifiableList())
+                .forEach(System.out::println);
+
     }
 }
